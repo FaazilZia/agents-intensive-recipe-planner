@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weekend Recipe & Shopping Agent</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe & Shopping Agent</h1>
+        <textarea id="inputPrompt" placeholder="Enter your dinner plan request here..."></textarea>
+        <button id="runButton">Get Shopping List</button>
+        <pre id="outputList"></pre>
+    </div>
+
+    <script>
+        // Simulated function to send prompt and get shopping list text
+        function simulateAgent(prompt) {
+            // This simulates what your Python backend currently outputs
+            return `# Shopping List\n\n## Produce\n- carrot\n- onion\n\n## Dairy\n- milk\n\n## Pantry\n- rice\n\n## Meat\n- chicken breast\n\n## Eggs\n- egg`;
+        }
+
+        document.getElementById('runButton').onclick = function() {
+            const prompt = document.getElementById('inputPrompt').value;
+            if (!prompt) {
+                alert('Please enter a prompt first');
+                return;
+            }
+            const shoppingList = simulateAgent(prompt);
+            document.getElementById('outputList').textContent = shoppingList;
+        };
+    </script>
+</body>
+</html>
